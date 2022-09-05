@@ -16,8 +16,12 @@ const Home: NextPage = () => {
                 {
                   x: ["2022년 8월", "2022년 9월", "2022년 10월"],
                   y: [20, 23, 30],
-                  mode: "scatter",
-                  line: { shape: "spline", color: "rgb(34, 197, 94)", size: 3 },
+                  mode: "lines+markers",
+                  line: {
+                    shape: "spline",
+                    color: "rgb(34, 197, 94)",
+                    width: 3,
+                  },
                   marker: { size: 15 },
                 },
               ]}
