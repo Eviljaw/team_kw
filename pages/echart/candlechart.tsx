@@ -40,13 +40,6 @@ const Echart: NextPage = () => {
         fontSize: 12,
         color: "#333",
       },
-      position: function (pos, params, el, elRect, size) {
-        const obj: Record<string, number> = {
-          top: 60,
-        };
-        obj[["left", "right"][+(pos[0] < size.viewSize[0] / 2)]] = 5;
-        return obj;
-      },
     },
     axisPointer: {
       link: [
