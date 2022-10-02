@@ -7,7 +7,7 @@ const Echart: NextPage = () => {
       <div className="flex w-full min-w-[400px] max-w-2xl flex-col items-center justify-center space-y-14 divide-y">
         <div className="flex w-full flex-col items-center justify-center">
           <span className="w-full p-4 text-left font-bold">
-            1.아파트 실거래가 추이(월)
+            1.1아파트 실거래가 추이(Line Chart)
           </span>
           <div className="flex h-96 w-full items-center justify-center p-5">
             <ReactEcharts
@@ -81,7 +81,99 @@ const Echart: NextPage = () => {
         </div>
         <div className="flex w-full flex-col items-center justify-center">
           <span className="w-full p-4 text-left font-bold">
-            2.아파트 실거래가 추이(월) + 캔들차트
+            1.2아파트 실거래가 추이(Scatter Chart)
+          </span>
+          <div className="flex h-96 w-full items-center justify-center p-5">
+            <ReactEcharts
+              option={{
+                title: { text: "아파트 실거래 현황", left: "center" },
+                legend: {
+                  data: ["반포 자이"],
+                  padding: 50,
+                },
+                tooltip: {},
+                grid: { top: 80 },
+                xAxis: {
+                  type: "category",
+                  data: [
+                    "22.05",
+                    "22.06",
+                    "22.07",
+                    "22.08",
+                    "22.09",
+                    "22.10",
+                    "22.11",
+                    "22.12",
+                  ],
+                },
+                yAxis: {
+                  type: "value",
+                },
+                toolbox: {
+                  feature: {
+                    saveAsImage: {},
+                  },
+                },
+                series: [
+                  {
+                    data: [11, 18, 21, 19, 27, 23, 18, 11],
+                    type: "line",
+                    stack: "confidence-band",
+                    symbol: "none",
+                    lineStyle: {
+                      opacity: 0,
+                    },
+                  },
+                  {
+                    data: [9, 3, 6, 14, 9, 6, 9, 11],
+                    type: "line",
+                    stack: "confidence-band",
+                    symbol: "none",
+                    lineStyle: {
+                      opacity: 0,
+                    },
+                    areaStyle: {
+                      color: "rgba(111,111,111,0.25)",
+                    },
+                  },
+                  {
+                    data: [
+                      [0, 16],
+                      [0, 15],
+                      [0, 17],
+                      [0, 12],
+                      [0, 14],
+                      [1, 21],
+                      [1, 22],
+                      [1, 18],
+                      [2, 21],
+                      [2, 22],
+                      [2, 23],
+                      [2, 24],
+                      [2, 25],
+                      [2, 27],
+                      [2, 19],
+                      [3, 29],
+                      [3, 25],
+                      [3, 19],
+                      [3, 21],
+                      [4, 33],
+                      [4, 29],
+                      [5, 25],
+                      [5, 23],
+                    ],
+                    color: "rgb(34, 197, 94)",
+                    type: "scatter",
+                  },
+                ],
+              }}
+              style={{ width: "100%", height: "100%" }}
+            />
+          </div>
+        </div>
+        <div className="flex w-full flex-col items-center justify-center">
+          <span className="w-full p-4 text-left font-bold">
+            1.3아파트 실거래가 추이(Candlestick Chart)
           </span>
           <div className="flex h-96 w-full items-center justify-center p-5">
             <span>작업중</span>
@@ -89,7 +181,7 @@ const Echart: NextPage = () => {
         </div>
         <div className="flex w-full flex-col items-center justify-center">
           <span className="w-full p-4 text-left font-bold">
-            3.아파트 종합평가(레이더차트)
+            2.아파트 종합평가(Raider Chart)
           </span>
           <div className="flex h-96 w-full items-center justify-center p-5">
             <ReactEcharts
@@ -135,7 +227,7 @@ const Echart: NextPage = () => {
         </div>
         <div className="flex w-full flex-col items-center justify-center">
           <span className="w-full p-4 text-left font-bold">
-            4. 아파트 랭킹차트(거래량)
+            3. 아파트 거래량 랭킹(Bar Chart)
           </span>
           <div className="flex h-96 w-full items-center justify-center p-5">
             <ReactEcharts
@@ -182,31 +274,31 @@ const Echart: NextPage = () => {
         </div>
         <div className="flex w-full flex-col items-center justify-center">
           <span className="w-full p-4 text-left font-bold">
-            5.1 분석 지도 - 거래량 지도
+            4.1 분석 지도 - 거래량 지도
           </span>
           <div className="flex h-96 w-full items-center justify-center p-5"></div>
         </div>
         <div className="flex w-full flex-col items-center justify-center">
           <span className="w-full p-4 text-left font-bold">
-            5.2 분석 지도 - 미분양 지도
+            4.2 분석 지도 - 미분양 지도
           </span>
           <div className="flex h-96 w-full items-center justify-center p-5"></div>
         </div>
         <div className="flex w-full flex-col items-center justify-center">
           <span className="w-full p-4 text-left font-bold">
-            5.3 분석 지도 - 인구 지도(전출입)
+            4.3 분석 지도 - 인구 지도(전출입)
           </span>
           <div className="flex h-96 w-full items-center justify-center p-5"></div>
         </div>
         <div className="flex w-full flex-col items-center justify-center">
           <span className="w-full p-4 text-left font-bold">
-            5.4 분석 지도 - 가구 지도(연령 / 가구원 수)
+            4.4 분석 지도 - 가구 지도(연령 / 가구원 수)
           </span>
           <div className="flex h-96 w-full items-center justify-center p-5"></div>
         </div>
         <div className="flex w-full flex-col items-center justify-center">
           <span className="w-full p-4 text-left font-bold">
-            6.1 심리 지표 - 매수심리 (게이지)
+            5.1 심리 지표 - 매수심리 (게이지)
           </span>
           <div className="flex h-96 w-full items-center justify-center p-5">
             <ReactEcharts
