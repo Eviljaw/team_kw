@@ -1,11 +1,9 @@
 import type { NextPage } from "next";
 import * as echarts from "echarts";
 import ReactEcharts from "echarts-for-react";
-import Korea from "../api/geo/korea.json";
 
 const Echart: NextPage = () => {
-  console.log(Korea);
-  echarts.registerMap("KOREA", Korea);
+  echarts.registerMap("KOREA", require("../api/geo/korea.json"));
   const onMapClick = (params: any) => {
     console.log("clicked! : ", params.data.id);
   };
