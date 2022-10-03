@@ -6,7 +6,7 @@ import Korea from "../api/geo/korea.json";
 const Echart: NextPage = () => {
   console.log(Korea);
   echarts.registerMap("KOREA", Korea);
-  const onMapClick = (params) => {
+  const onMapClick = (params: any) => {
     console.log("clicked! : ", params.data.id);
   };
   const onEvents = {
