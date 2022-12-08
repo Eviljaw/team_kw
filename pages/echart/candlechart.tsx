@@ -26,7 +26,7 @@ const Echart: NextPage = () => {
     },
     legend: {
       top: 30,
-      data: ["日K", "MA5", "MA10", "MA20", "MA30"],
+      data: ["반포자이", "MA5", "MA10", "MA20", "MA30"],
     },
     tooltip: {
       triggerOn: "none",
@@ -193,7 +193,7 @@ const Echart: NextPage = () => {
       },
       {
         type: "candlestick",
-        name: "日K",
+        name: "반포자이",
         data: data,
         itemStyle: {
           color: "#ef232a",
